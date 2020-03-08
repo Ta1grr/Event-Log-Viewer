@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table, Container } from "reactstrap";
+import ModalRow from "./ModalRow";
 import "./index.css";
 import sampleLogs from "../../SKUNinja-sample-logs.json";
 
@@ -25,15 +26,16 @@ class TableFormat extends Component {
           </thead>
           <tbody>
             {this.state.sampleLog.map(log => (
-              <tr
-                className={
-                  log.type === "1" ? "row1" : log.type === "2" ? "row2" : "row3"
-                }
-              >
-                <th scope="row">{log.type}</th>
-                <td>{log.created}</td>
-                <td>{log.subject}</td>
-              </tr>
+              // <tr
+              //   className={
+              //     log.type === "1" ? "row1" : log.type === "2" ? "row2" : "row3"
+              //   }
+              // >
+              //   <th scope="row">{log.type}</th>
+              //   <td>{log.created}</td>
+              //   <td>{log.subject}</td>
+              // </tr>
+              <ModalRow logRow={log} />
             ))}
             {/* <tr>
               <th scope="row">1</th>
