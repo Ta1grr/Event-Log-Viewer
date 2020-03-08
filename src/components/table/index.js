@@ -1,40 +1,41 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 import "./index.css";
+import sampleLogs from "../../SKUNinja-sample-logs.json";
 
 class TableFormat extends Component {
-  state = {};
+  state = {
+    sampleLog: []
+  };
+
+  componentDidMount() {
+    this.setState({ sampleLog: sampleLogs });
+  }
 
   render() {
     return (
       <Table bordered>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Type</th>
+            <th>Date / Time</th>
+            <th>Subject</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          {this.state.sampleLog.map(log => (
+            <tr>
+              <th scope="row">{log.type}</th>
+              <td>{log.created}</td>
+              <td>{log.subject}</td>
+            </tr>
+          ))}
+          {/* <tr>
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          </tr> */}
         </tbody>
       </Table>
     );
