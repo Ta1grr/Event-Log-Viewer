@@ -1,3 +1,20 @@
 h1 {
   color: white;
 }
+
+.tableFormat {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row1 {
+  background-color: green;
+}
+
+.row2 {
+  background-color: yellow;
+}
+
+.row3 {
+  background-color: red;
+}
