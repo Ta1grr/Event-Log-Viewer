@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import TableFormat from "./components/Table";
-import NavBar from "./components/NavBar";
+import TableFormat from "./components/Table/index";
+import NavBar from "./components/NavBar/index";
 
 function App() {
   return (
