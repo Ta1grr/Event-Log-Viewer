@@ -16,6 +16,7 @@ import {
   Label,
   Input
 } from "reactstrap";
+import "./index.css";
 
 const NavBar = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,20 +24,20 @@ const NavBar = props => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <div className="nav-bar">
+      <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">Event Log Viewer</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              {/* <NavLink href="/components/">Components</NavLink> */}
             </NavItem>
             <NavItem></NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              {/* <DropdownToggle nav caret>
                 Options
-              </DropdownToggle>
+              </DropdownToggle> */}
               <DropdownMenu right>
                 <DropdownItem>Option 1</DropdownItem>
                 <DropdownItem>Option 2</DropdownItem>

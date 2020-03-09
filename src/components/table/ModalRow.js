@@ -13,10 +13,10 @@ const ModalRow = props => {
     <tr
       className={
         props.logRow.type === "1"
-          ? "text-success"
+          ? "text-success logRows"
           : props.logRow.type === "2"
-          ? "text-warning"
-          : "text-danger"
+          ? "text-warning logRows"
+          : "text-danger logRows"
       }
       onClick={toggle}
     >

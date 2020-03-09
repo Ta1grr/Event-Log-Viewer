@@ -19,3 +19,7 @@ h1 {
 .row3 {
   background-color: red;
 }
+
+.logRows:hover {
+  filter: opacity(0.8);
+}
