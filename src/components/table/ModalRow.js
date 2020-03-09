@@ -21,7 +21,8 @@ const ModalRow = props => {
       onClick={toggle}
     >
       <th scope="row">{props.logRow.type}</th>
-      <td>{format(props.logRow.created)}</td>
+      {/* <td>{format(props.logRow.created, "yyyy-MM-dd'T'HH:mm")}</td> */}
+      <td>{props.logRow.created}</td>
       <td>{props.logRow.subject}</td>
 
       <Modal isOpen={modal} toggle={toggle} className={className}>
