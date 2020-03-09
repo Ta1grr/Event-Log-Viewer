@@ -3,6 +3,7 @@ import { Table, Container } from "reactstrap";
 import ModalRow from "./ModalRow";
 import "./index.css";
 import sampleLogs from "../../SKUNinja-sample-logs.json";
+import { compareAsc, compareDesc } from "date-fns";
 
 class TableFormat extends Component {
   state = {
@@ -26,23 +27,8 @@ class TableFormat extends Component {
           </thead>
           <tbody>
             {this.state.sampleLog.map(log => (
-              // <tr
-              //   className={
-              //     log.type === "1" ? "row1" : log.type === "2" ? "row2" : "row3"
-              //   }
-              // >
-              //   <th scope="row">{log.type}</th>
-              //   <td>{log.created}</td>
-              //   <td>{log.subject}</td>
-              // </tr>
-              <ModalRow logRow={log} />
+              <ModalRow key={log.id} logRow={log} />
             ))}
-            {/* <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr> */}
           </tbody>
         </Table>
       </Container>
