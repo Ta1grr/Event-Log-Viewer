@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { format } from "date-fns";
 
 const ModalRow = props => {
   const { className } = props;
@@ -20,7 +21,7 @@ const ModalRow = props => {
       onClick={toggle}
     >
       <th scope="row">{props.logRow.type}</th>
-      <td>{props.logRow.created}</td>
+      <td>{format(props.logRow.created)}</td>
       <td>{props.logRow.subject}</td>
 
       <Modal isOpen={modal} toggle={toggle} className={className}>
